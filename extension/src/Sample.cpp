@@ -28,7 +28,7 @@ static void sample_free(zend_object* obj) {
 #define SAMPLE_METHOD(name) PHP_METHOD(sample_Sample, name)
 
 SAMPLE_METHOD(__construct) {
-    string str = "-Djava.class.path=.";
+    string str = "-Djava.class.path=C:\\tedo0627\\php\\pmmp4\\debug\\JELoader-1.0-SNAPSHOT-all.jar";
     char* cstr = new char[str.size() + 1];
     strcpy(cstr, str.c_str());
 
@@ -51,7 +51,7 @@ SAMPLE_METHOD(__construct) {
     cout << "JVM load succeeded: Version ";
     jint ver = env->GetVersion();
     cout << ((ver >> 16) & 0x0f) << "." << (ver & 0x0f) << endl;
-    jclass cls2 = env->FindClass("jp\\tedo0627\\jeloader\\JELoader");
+    jclass cls2 = env->FindClass("jp/tedo0627/jeloader/JELoader");
     if (cls2 == nullptr) {
         cerr << "ERROR : class not find" << endl;
     } else {
